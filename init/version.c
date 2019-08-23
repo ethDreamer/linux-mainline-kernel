@@ -24,12 +24,15 @@ extern int version_string(LINUX_VERSION_CODE);
 int version_string(LINUX_VERSION_CODE);
 #endif
 
+#define ETHEXTRA "_ethDreamer"
+#define UTS_RELEATH UTS_RELEASE ETHEXTRA
+
 struct uts_namespace init_uts_ns = {
 	.kref = KREF_INIT(2),
 	.name = {
 		.sysname	= UTS_SYSNAME,
 		.nodename	= UTS_NODENAME,
-		.release	= UTS_RELEASE,
+		.release	= UTS_RELEATH,
 		.version	= UTS_VERSION,
 		.machine	= UTS_MACHINE,
 		.domainname	= UTS_DOMAINNAME,
